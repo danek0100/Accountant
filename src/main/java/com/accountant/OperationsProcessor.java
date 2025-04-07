@@ -23,10 +23,10 @@ public class OperationsProcessor {
         } else if (operation instanceof Transfer) {
             var source = accountMap.get(operation.source);
             var target = accountMap.get(operation.target);
-            var currentAcc1 = accountMap.get(operation.source).getBalance();
-            var currentAcc2 = accountMap.get(operation.target).getBalance();
-            accountMap.get(operation.source).setBalance(currentAcc1.subtract(operation.amount));
-            accountMap.get(operation.target).setBalance(currentAcc2.add(operation.amount));
+            var currentSourceBalance = source.getBalance();
+            var currentTargetBalance = target.getBalance();
+            accountMap.get(operation.source).setBalance(currentSourceBalance.subtract(operation.amount));
+            accountMap.get(operation.target).setBalance(currentTargetBalance.add(operation.amount));
             System.out.println("Перевод со счета: " + source.getName() + " на счет " + target.getName());
             System.out.println("Баланс счета отправителя: " + accountMap.get(operation.source).getBalance());
             System.out.println("Баланс счета получателя: " + accountMap.get(operation.target).getBalance());
