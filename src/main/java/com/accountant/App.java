@@ -13,6 +13,7 @@ public class App {
         System.out.println(" ");
         op.doOperation(operation2);
         System.out.println(" ");
+
         op.doOperation(operation3);
 
     }
